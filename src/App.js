@@ -16,9 +16,9 @@ function App() {
       projectLink: "https://tonelab.vercel.app/"
     },
     {
-      title: "Jagath Narayan - Portfolio",
+      title: "Jagath - Portfolio",
       tags: ["Bootstrap", "Portfolio", "Live"],
-      description: "A weekend project done for a friend to setup his portfolio website with a minimal theme showcasing his work and life as a photographer.",
+      description: "A weekend project done for a friend (Jagath Narayan)to setup his portfolio website with a minimal theme showcasing his work and life as a photographer.",
       projectLink: "https://jagathnarayanan.com/project"
     },
     {

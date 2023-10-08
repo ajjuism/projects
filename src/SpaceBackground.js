@@ -102,7 +102,7 @@ const SpaceBackground = ({ projects }) => {
 
   return (
     <div className="spaceWrapper">
-      <button onClick={() => setIsSidebarActive(!isSidebarActive)} className="tagsButton">TAGS</button>      
+      <button onClick={() => setIsSidebarActive(!isSidebarActive)} className="tagsButton">Menu</button>      
         <button onClick={() => window.location.href="https://ajjuism.com"} className="mobileHomeButton">
             <FontAwesomeIcon icon={faArrowLeft} /> @ajjuism
         </button>
@@ -112,7 +112,11 @@ const SpaceBackground = ({ projects }) => {
       </button>
       <button onClick={() => setIsSidebarActive(false)} className="closeSidebar" style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', color: 'white', fontSize: '24px', cursor: 'pointer' }}>&times;</button>
         <h1>Projects</h1>
-        <p>Hi, this is some text about myself and some stuff I have been doing.</p>        
+        <p>
+        I am not a developer by any means. I am, however, really patient and have a subscription to Chatgpt Plus. <br />
+        <br />
+        Here are some of my attempts to translate a few ideas as best as I could and some fun experiments.
+        </p>
         <h3>Tags</h3>
         <button onClick={() => handleTagClick(null)} className={`tagButton ${activeTag === null && 'active'}`}>All</button>
             {[...new Set(projects.flatMap(project => project.tags))].map(tag => (
