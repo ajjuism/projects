@@ -1,0 +1,449 @@
+/* SpaceBackground.css */
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  
+
+  }
+  
+
+.spaceWrapper {
+    position: relative;
+    width: 100vw;
+    /* height: 100vh; */
+    overflow-y: auto; /* Add this line */
+    /* overflow: hidden; */
+    background: linear-gradient(270deg, #131313, #0a1111, #1a1a1a);
+    background-size: 600% 600%;
+    animation: AnimationName 8s ease infinite;
+  }
+  
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .spaceCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    padding: 20px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 320px;
+    margin-top: 70px; /* Adding top margin */
+    z-index: 3;
+    overflow-y: auto; /* Add this line */
+    height: calc(100vh - 70px); /* Add this line to set the height */
+    width: calc(100vw - 400px); /* Add this line to set the width */
+    padding-right: 20px; /* Add some padding to account for the scrollbar width */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+    .content::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    .content {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+
+  .projectCard {
+    display: flex;
+    flex: 0 0 calc(75% - 20px); /* Adjusted for 2 cards per row */
+    width: calc(50% - 20px); /* Adjusted for 2 cards per row */
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: center; /* Center items vertically */
+    position: relative; /* Added to position the pseudo-element relative to the card */
+    border: 0.1px solid transparent;
+    overflow: hidden; /* Hide the overflow to ensure the border animation stays within the card */
+    flex-grow: 0; /* Prevent the card from growing */
+    max-height: 220px; /* Adjust this value based on your preferred maximum height */
+    
+
+}
+
+.projectCard p {
+    font-size: 15px;
+}
+
+.projectCard h2 {
+    color: rgb(255, 255, 255);
+
+}
+
+.projectCard::before,
+.projectCard::after,
+.projectCard > div::before,
+.projectCard > div::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, rgba(64, 224, 208, 0.222), rgba(7, 155, 106, 0.294));
+    z-index: 1;
+    transition: all 2s ease-in-out;
+}
+
+.projectCard::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.projectCard::after {
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 2px;
+}
+
+.projectCard > div::before {
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+}
+
+.projectCard > div::after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 2px;
+}
+
+.projectCard:hover::before {
+    width: 100%;
+}
+
+.projectCard:hover::after {
+    height: 100%;
+}
+
+.projectCard:hover > div::before {
+    width: 100%;
+}
+
+.projectCard:hover > div::after {
+    height: 100%;
+}
+
+.projectCard:last-child {
+    margin-bottom: 50px; /* Adjust this value as per your preference */
+}
+
+.projectImage {
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 0; /* Remove the bottom margin */
+    color: rgba(240, 248, 255, 0.725);
+    font-size: 100px;
+}
+  
+
+  .sidebar h1 {
+    margin-top: 80px;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.sidebar h3 {
+    margin-top: 80px;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 20px;
+}
+
+  .backButton, .tagButton, .projectButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(13, 134, 130, 0.5);
+
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .backButton:hover, .tagButton:hover, .projectButton:hover {
+    background-color: rgba(14, 36, 48, 0.938);
+    transform: scale(1.05); /* Slightly enlarges the card */
+    transition: transform 0.3s ease;
+  }
+
+  .tagsButton:hover {
+    background-color: rgba(0, 0, 0, 0.938);
+
+  }
+
+  .projectContent {
+    width: 70%;
+    color: white;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .tagsButton, .backButton {
+    position: absolute;
+    top: 10px;
+    z-index: 4;
+  }
+
+  .tag {
+    padding: 5px 10px;
+    background-color: #0E232F; 
+    border-radius: 30px;
+    margin-right: 5px;
+    color: white;
+    font-size: 12px;
+}
+  
+  .tagButton {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tagButton.active, .tagButton:hover {
+    background-color: rgba(17, 58, 80, 0.938);
+  }
+
+  .tagsButton {
+    left: 10px;
+  }
+  
+  .backButton {
+    left: 70px;
+    display: none;
+  }
+ 
+  .homeButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Add some spacing below the button */
+    display: block; /* Ensure the button takes up the full width */
+  }
+  
+  .homeButton:hover {
+    background-color: rgba(14, 36, 48, 0.938);
+    transform: scale(1.05); /* Slightly enlarges the button */
+    transition: transform 0.3s ease;
+  }
+
+  .mobileHomeButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 40px; /* Adjust this value based on the width of your tagsButton */
+    z-index: 6;
+    display: none; /* Initially hidden */
+    font-size: 16px;
+  }
+  
+  .mobileHomeButton:hover {
+    background-color: rgba(0, 0, 0, 0.682);
+  }
+  
+
+  
+  @media (max-width: 768px) {
+
+    .mobileHomeButton {
+          display: block;
+    }      
+
+    .spaceWrapper {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .sidebar.active {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: calc(100vh - 50px); /* Adjust the height to account for the tagsButton */
+        background-color: rgba(0, 0, 0, 0.885);
+        z-index: 6; /* Ensure the sidebar is at the very top when active */
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 20px; /* Add some space to account for the sticky tagsButton */
+        width: 100vw; /* Take up the full viewport width on smaller screens */
+        justify-content: center; /* Center the cards */
+
+
+      }
+    
+      .projectCard {
+        width: 95%; /* Slightly less than full width for some padding */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto; /* Let the height be determined by its content */
+        margin: 10px auto; /* Vertical spacing and auto margins for centering */
+    }
+
+
+    .projectImage {
+        order: -1; /* Move the image to the top */
+        margin-right: 0;
+        margin-left: 0;
+        float: left; /* Float the logo to the left */
+        height: 50px;
+        width: 50px;
+        display: none;
+    }
+
+    .projectCard {
+        width: 95%; /* Slightly less than full width for some padding */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto; /* Let the height be determined by its content */
+    }
+
+    .projectContent {
+        width: 100%;
+        color: white;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+
+
+      .sidebar.active {
+        height: 100vh; /* Take the full height of the viewport */
+        overflow-y: auto; /* Allow scrolling inside the sidebar if content overflows */
+        position: fixed; /* Fix the position of the sidebar */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+    }
+    
+      .sidebar {
+        display: none;
+      }
+    
+      .tagsButton {
+        position: sticky; /* Make the button sticky */
+        z-index: 6; /* Ensure it's above other elements */
+        background-color: rgba(0, 0, 0, 0.7); /* Add a background to make it stand out */
+        display: block; /* Hide the tags button when the sidebar is active */
+        right: 10px; /* Move the button to the right */
+        left: 300px; /* Reset the left positioning */
+        top: 20px; /* Add a small margin to the top */
+        cursor: pointer;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+    }
+  
+      .closeSidebar {
+        display: block;
+      }
+
+      .homeButton {
+        display: none;
+      }
+
+  }
+  
+/* For larger screens */
+@media (min-width: 769px) {
+    .content {
+        margin-left: 470px; /* Adjusted for the sidebar width */
+        width: calc(100vw - 400px); /* Subtracting the sidebar width */
+    }
+  
+    .sidebar {
+      display: block;
+      transform: translateX(0);
+    }
+  
+    .tagsButton {
+      display: none;
+    }
+
+    .closeSidebar {
+        display: none;
+      }
+}
+
+/* Hide scrollbars globally */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+body, html {
+    overflow-x: hidden; /* Hide horizontal scroll */
+}
