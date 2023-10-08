@@ -232,7 +232,7 @@ body {
   
   .tagsButton, .backButton {
     position: absolute;
-    top: 10px;
+    /* top: 10px; */
     z-index: 4;
   }
 
@@ -397,13 +397,14 @@ body {
         background-color: rgba(0, 0, 0, 0.7); /* Add a background to make it stand out */
         display: block; /* Hide the tags button when the sidebar is active */
         right: 10px; /* Move the button to the right */
-        left: 300px; /* Reset the left positioning */
+        left: 320px; /* Reset the left positioning */
         top: 20px; /* Add a small margin to the top */
         cursor: pointer;
         color: #fff;
         border: none;
         padding: 10px 15px;
         margin-bottom: 40px;
+        font-family: urbanist;
     }
   
       .closeSidebar {
