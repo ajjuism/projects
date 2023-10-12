@@ -5,7 +5,7 @@ function App() {
   const projects = [
     {
       title: "Circular Clone",
-      tags: ["React", "Figma","Plugin"],
+      tags: ["Typescript", "Figma","Plugin"],
       description: "Circular Clone allows you to arrange clones of objects on your Figma canvas along a circular shape. You can control the number of segments, width, and rotation angle of the circular shape as well as the angle of rotation of the cloned objects.",
       projectLink: "https://www.figma.com/community/plugin/1293975517470860904/circular-clone"
     },
