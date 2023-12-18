@@ -31,7 +31,7 @@ function App() {
       title: "Circular Clone - Landing Page",
       tags: ["Tailwind", "Landing Page", "WIP"],
       description: "A Simple landing page for my circular clone plugin that uses tailwind css for styling.",
-      projectLink: "https://jagathnarayanan.com/project"
+      projectLink: "https://circularclone.netlify.app/"
     },
     {
       title: "Jagath - Portfolio",
