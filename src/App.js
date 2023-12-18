@@ -4,6 +4,12 @@ import SpaceBackground from './SpaceBackground';
 function App() {
   const projects = [
     {
+      title: "Mandala Maker",
+      tags: ["Typescript", "Figma","Plugin"],
+      description: "Mandala Maker allows you to craft intricate mandala patterns from your own designs. It offers adjustable settings for segment count, element spacing, design rotation, and overall mandala size.",
+      projectLink: "https://www.figma.com/community/plugin/1304874310414952650/mandala-maker"
+    },
+    {
       title: "Circular Clone",
       tags: ["Typescript", "Figma","Plugin"],
       description: "Circular Clone allows you to arrange clones of objects on your Figma canvas along a circular shape. You can control the number of segments, width, and rotation angle of the circular shape as well as the angle of rotation of the cloned objects.",
@@ -20,6 +26,12 @@ function App() {
       tags: ["React", "Tonejs", "Audio", "Live"],
       description: "Prog, a Chrome extension in development, enables users to precisely track task progress by seconds, minutes, hours, or days.",
       projectLink: "https://tonelab.vercel.app/"
+    },
+    {
+      title: "Circular Clone - Landing Page",
+      tags: ["Tailwind", "Landing Page", "WIP"],
+      description: "A Simple landing page for my circular clone plugin that uses tailwind css for styling.",
+      projectLink: "https://jagathnarayanan.com/project"
     },
     {
       title: "Jagath - Portfolio",
